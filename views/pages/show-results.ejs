@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Today I'm Eating...</title>
+  <%- include('../partials/head') %>
+</head>
+
+<body>
+  <header>
+    <%- include('../partials/nav') %>
+  </header>
+  <main>
+      <section class="controls">
+          <h1>Search Results</h1>
+      
+          <ul class="add-form">
+            <% searchResults.forEach(placeDetails => { %>
+              <li>
+                <img src="<%= placeDetails.photo %>"" alt=Cover for <%= placeDetails.name %> />
+                <h2><%= placeDetails.name %></h2>
+                <p><a href="<%= placeDetails.website %>"><%= placeDetails.website %></a></p>
+                <p><%= placeDetails.quick_address %></p>
+                <p><%= placeDetails.formatted_phone_number %></p>
+                <p><%= placeDetails.hours %></p>
+                <p>Price:  <%= placeDetails.price %></p>
+                <p>Rating: <%= placeDetails.rating %></p>
+                
+                <form action="/add-to-database" method="post" id="save-shop">
+                  <button type="submit">Try Another Place</button>
+                  <div class="save-shop">
+                  <input type="text" name="name" value="<%= placeDetails.name %>" />
+                  <input type="text" name="place_id" value="<%= placeDetails.place_id %>" />
+                  <input type="text" name="price" value="<%= placeDetails.price %>" />
+                  <input type="text" name="rating" value="<%= placeDetails.rating %>" />
+                  <input type="text" name="photo_ref" value="<%= placeDetails.photo_ref %>" />
+                  <input type="text" name="photo" value="<%= placeDetails.photo %>" />
+                  <input type="text" name="website" value="<%= placeDetails.website %>" />
+                  <input type="text" name="formatted_address" value="<%= placeDetails.formatted_address %>" />
+                  <input type="text" name="quick_address" value="<%= placeDetails.quick_address %>" />
+                  <input type="text" name="formatted_phone_number" value="<%= placeDetails.formatted_phone_number %>" />
+                  <input type="text" name="hours" value="<%= placeDetails.hours %>" />
+                </div>
+                </form>
+              </li>
+            <% }) %>
+          </ul>
+        </section>
+    </main>
+    <footer>
+      <%- include('../partials/footer') %>
+  
+    </footer>
+  </body>
+  
+  </html>
+  

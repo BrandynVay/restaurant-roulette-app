@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I've seen these before...</title>
+  <%- include('../partials/head') %>
+</head>
+
+<body>
+  <header>
+    <%- include('../partials/nav') %>
+  </header>
+
+  <main>
+    <section class="controls">
+      <h1>Restaurant History</h1>
+
+      <ul class="add-form">
+        <% results.forEach(placeDetails => { %>
+        <li>
+          <img src="<%= placeDetails.photo %>"" alt=Cover for <%= placeDetails.name %> />
+                  <h2><%= placeDetails.name %></h2>
+                  <p><a href=" <%= placeDetails.website %>"><%= placeDetails.website %></a></p>
+          <p><%= placeDetails.quick_address %></p>
+          <p><%= placeDetails.formatted_phone_number %></p>
+          <p><%= placeDetails.hours %></p>
+          <p>Price: <%= placeDetails.price %></p>
+          <p>Rating: <%= placeDetails.rating %></p>
+        </li>
+      </ul>
+      <form action="/shop-favorites/<%= placeDetails.id %>" method="post">
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit" class="button">Delete Restaurant</button>
+      </form>
+      <% }) %>
+    </section>
+      
+  </main>
+
+  <footer>
+    <%- include('../partials/footer')%>
+  </footer>
+
+</body>
+
+
+</html>

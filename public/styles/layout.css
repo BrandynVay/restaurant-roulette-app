@@ -1,0 +1,164 @@
+.nav a:not(:first-child){
+  font-family: 'Patrick Hand', cursive; 
+/*   font-family: 'Ubuntu Mono', monospace; */
+}
+
+.nav{
+  overflow: hidden;
+  background-color: #1c0118;
+}
+
+.nav a {
+  float: left;
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav a:first-child{
+    font-size: 22px;
+}
+
+
+.nav .icon {
+  display: none;
+}
+
+
+.nav a:hover {
+  background-color: #370926;
+  color: #ffba49;
+}
+
+
+
+@media screen and (min-width:300px) and (max-width: 768px){
+  .nav a:not(:first-child){
+    display: none;
+  }
+  .nav a.icon {
+    float: right;
+    display: block;
+  }
+
+  .nav.responsive {
+    position: relative;
+  }
+
+  .nav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .nav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .controls{
+    margin: 0px auto;
+    width:70%;
+    text-align: center;
+    color:#1c0118;
+  }
+
+  .how-to{
+    margin: 0px auto;
+    padding: 10px;
+    width:70%;
+    color:#1c0118;
+  }
+
+  #roulette{
+    margin: 10px auto;
+    border-radius: 50%;
+    border:solid 2px #1c0118;
+    width: 100px;
+    height: 100px;
+    transition: 1s all;
+    background: url('http://67.media.tumblr.com/7592e6f5cf1efe81b2a07d8cea53a65b/tumblr_ndgd0mLqO21qhy6c9o3_400.gif');
+  }
+  
+  .spin{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    transform: rotate(2160deg);
+  }
+  .duo{
+    width:70%;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+#roulette{
+  margin: 20px auto;
+  border-radius: 50%;
+  border:solid 2px #1c0118;
+  width: 300px;
+  height: 300px;
+  transition: 1s all;
+  background: url('http://67.media.tumblr.com/7592e6f5cf1efe81b2a07d8cea53a65b/tumblr_ndgd0mLqO21qhy6c9o3_400.gif');
+}
+
+.spin{
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  transform: rotate(2160deg);
+}
+
+.controls{
+  margin: 20px auto;
+  padding: 10px;
+  width:600px;
+  text-align: center;
+  color:#1c0118;
+}
+.how-to{
+  margin: 20px auto;
+  padding: 10px;
+  width:600px;
+  color:#1c0118;
+}
+
+
+.duo{
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.bio{
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.left{
+  order:0;
+  flex-grow: 1;
+  
+}
+
+.right{
+  order:1;
+  flex-grow: 1;
+}
+
+.infographic{
+  width: 30%;
+  height: 30%;
+}
+
